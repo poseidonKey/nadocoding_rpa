@@ -9,6 +9,6 @@ import pyautogui
 pixel = pyautogui.pixel(28, 18)
 print(pixel)
 
-#print(pyautogui.pixelMatchesColor(28, 18, (34,167,242)))
-#print(pyautogui.pixelMatchesColor(28, 18, pixel))
-print(pyautogui.pixelMatchesColor(28, 18, (34,167,243)))
+#print(pyautogui.pixelMatchesColor(28, 18, (34,167,242))) # True, False 출력
+#print(pyautogui.pixelMatchesColor(28, 18, pixel)) # True
+print(pyautogui.pixelMatchesColor(28, 18, (34,167,243))) # False

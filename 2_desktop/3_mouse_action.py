@@ -4,13 +4,16 @@ import pyautogui
 
 # pyautogui.click(64, 17, duration=1) # 1초 동안 (64, 17) 좌표로 이동 후 마우스 클릭
 # pyautogui.click()
+# 아래 두개를 이용한 것과 같은 동작
 # pyautogui.mouseDown()
 # pyautogui.mouseUp()
 
 #pyautogui.doubleClick()
+# 그림판 등에서 마우스 클릭 횟수
 #pyautogui.click(clicks=500)
 
 # pyautogui.moveTo(200, 200)
+# 그림판 선 그리기 등에 이용
 # pyautogui.mouseDown() # 마우스 버튼 누른 상태
 # pyautogui.moveTo(300, 300)
 # pyautogui.mouseUp() # 마우스 버튼 뗀 상태
@@ -20,6 +23,7 @@ pyautogui.sleep(3) # 3초 대기
 #pyautogui.middleClick()
 
 #print(pyautogui.position())
+# 메모장 창을 이용해 시험
 #pyautogui.moveTo(1114, 349)
 #pyautogui.drag(100, 0) # 현재 위치 기준으로 x 100 만큼, y 0 만큼 드래그
 #pyautogui.drag(100, 0, duration=0.25) # 너무 빠른 동작으로 drag 수행이 안될때는 duration 값 설정

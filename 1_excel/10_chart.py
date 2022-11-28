@@ -19,4 +19,4 @@ line_chart.y_axis.title = "점수" # Y축의 제목
 line_chart.x_axis.title = "번호" # X축의 제목
 ws.add_chart(line_chart, "E1")
 
-wb.save("sample_chart.xlsx")
+wb.save("sample_chart_line.xlsx")

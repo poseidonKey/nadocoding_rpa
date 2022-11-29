@@ -1,6 +1,9 @@
 # import logging
 
+# 로깅 정보, 시간정보, 메시지 내용을 출력
 # logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+# logging.ERROR 이상 되는 것만 뜬다.
+# logging.basicConfig(level=logging.ERROR, format="%(asctime)s [%(levelname)s] %(message)s")
 
 # # debug < info < warning < error < critical
 # logging.debug("아 이거 누가 짠거야~~")

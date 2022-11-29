@@ -26,15 +26,16 @@ print(file_menu)
 # pyautogui.moveTo(trash_icon)
 
 # 속도 개선
-# 1. GrayScale
+# 1. GrayScale 흑백 모드로 전환해 처리. 정확성이 약간 떨어짐.
 # trash_icon = pyautogui.locateOnScreen("trash_icon.png", grayscale=True)
 # pyautogui.moveTo(trash_icon)
 
-# 2. 범위 지정
+# 2. 범위 지정 빠름. mouseInfo 이용
 # trash_icon = pyautogui.locateOnScreen("trash_icon.png", region=(1488, 623, 1881 - 1488, 137))
 # pyautogui.moveTo(trash_icon)
 
-# 3. 정확도 조정
+# 3. 정확도 조정 * 사용하기 위해 pip install opencv-python 설치해야 한다.
+# 예를 들어 0.1을 주면 엉뚱한 것을 찾아준다.
 # run_btn = pyautogui.locateOnScreen("run_btn.png", confidence=0.9) # 90%
 # pyautogui.moveTo(run_btn)
 
@@ -46,6 +47,8 @@ print(file_menu)
 #     pyautogui.click(file_menu_notepad)
 # else:
 #     print("발견 실패")
+
+# 아래와 같이 계속 기다림으로 처리할 수 있음
 # while file_menu_notepad is None:
 #     file_menu_notepad = pyautogui.locateOnScreen("file_menu_notepad.png")
 #     print("발견 실패")

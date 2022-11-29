@@ -1,18 +1,24 @@
 import pyautogui
-# file_menu = pyautogui.locateOnScreen("file_menu.png")
-# print(file_menu)
+
+# 그림판의 자르기를 통해 순수 이미지만 png 파일로 저장해야 함. 포토스케이프 안됨
+file_menu = pyautogui.locateOnScreen("./2_desktop/menu_test.png")
+print(file_menu)
 # pyautogui.click(file_menu)
 
+# 약간의 시간 소요 됨
 # trash_icon = pyautogui.locateOnScreen("trash_icon.png")
 # pyautogui.moveTo(trash_icon)
 
+# 없을 경우 None을 출력. 예민한 편임.
 # screen = pyautogui.locateOnScreen("screenshot.png")
 # print(screen)
 
+# 화면에 여러개의 목표가 있을 경우 locateAllOnScreen을 이용
 # for i in pyautogui.locateAllOnScreen("checkbox.png"):
 #     print(i)
 #     pyautogui.click(i, duration=0.25)
 
+# 화면에 여러개의 목표가 있을 경우 처음 것만 처리
 # checkbox = pyautogui.locateOnScreen("checkbox.png")
 # pyautogui.click(checkbox)
 

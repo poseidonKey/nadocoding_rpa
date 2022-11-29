@@ -28,11 +28,11 @@ import os
 # # 날짜 정보를 strftime 을 통해서 연월일 시분초 형태로 출력
 # print(datetime.datetime.fromtimestamp(ctime).strftime("%Y%m%d %H:%M:%S"))
 
-# # 파일의 수정 날짜
+# # 파일의 수정 날짜 make
 # mtime = os.path.getmtime(file_path)
 # print(datetime.datetime.fromtimestamp(mtime).strftime("%Y%m%d %H:%M:%S"))
 
-# # 파일의 마지막 접근 날짜
+# # 파일의 마지막 접근 날짜 access
 # atime = os.path.getatime(file_path)
 # print(datetime.datetime.fromtimestamp(atime).strftime("%Y%m%d %H:%M:%S"))
 
@@ -42,15 +42,16 @@ import os
 
 
 # 파일 목록 가져오기
-#print(os.listdir()) # 모든 폴더, 파일 목록 가져오기
+#print(os.listdir()) # 모든 폴더, 파일 목록 가져오기 list로 불러옴
 #print(os.listdir("rpa_basic")) # 주어진 폴더 밑에서 모든 폴더, 파일 목록 가져오기
 
 # 파일 목록 가져오기 (하위 폴더 모두 포함)
 #result = os.walk("rpa_basic") # 주어진 폴더 밑에 있는 모든 폴더, 파일 목록 가져오기
-#print(result)
+#print(result) object로 나타남. 아래처럼 tuple로 나눠 처리
 
 # for root, dirs, files in result:
 #     print(root, dirs, files)
+
 
 # 만약 폴더 내에서 특정 파일들을 찾으려면?
 # name = "11_file_system.py"
@@ -66,7 +67,7 @@ import os
 # import fnmatch
 # pattern = "*.py" # .py 로 끝나는 모든 파일
 # result = []
-# for root, dirs, files in os.walk("."):
+# for root, dirs, files in os.walk("."): # 현재 폴더의 모든 내용
 #     # [a.txt, b.txt, c.txt, 11_file_system.py, ...]
 #     for name in files:
 #         if fnmatch.fnmatch(name, pattern): # 이름이 패턴과 일치하면
@@ -122,7 +123,7 @@ import shutil # shell utilities
 #shutil.copy("run_btn.png", "test_folder") # 원본 파일 경로, 대상 폴더 경로
 # 어떤 파일을 폴더 안에 새로운 파일 이름으로 복사하기
 #shutil.copy("run_btn.png", "test_folder/copied_run_btn.png") # 원본 파일 경로, 대상 경로(변경된 파일명까지)
-#shutil.copyfile("run_btn.png", "test_folder/copied_run_btn_2.png") # 원본 파일 경로, 대상 파일 경로
+#shutil.copyfile("run_btn.png", "test_folder/copied_run_btn_2.png") # 원본 파일 경로, 대상 파일 경로와 파일명까지 필수
 
 # shutil.copy("run_btn.png", "test_folder/copy.png")
 # shutil.copy2("run_btn.png", "test_folder/copy2.png") # 원본 파일 경로, 대상 폴더(파일) 경로

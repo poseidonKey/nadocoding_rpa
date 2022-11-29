@@ -20,10 +20,14 @@ pyautogui.press("enter") # 엔터 키 입력
 pyautogui.sleep(2)
 
 window = pyautogui.getWindowsWithTitle("제목 없음 - 그림판")[0] # 그림판 1개만 뜨워져 있다고 가정
+
+# 실험을 위해 주석 처리한 후 테스트
 #if window.isMaximized == False:
 #    window.maximize() # 최대화
 
 # 글자 버튼 클릭
+# btn_text.png 파일 만든 후
+# 잘 못 찾을 경우 confidence 값 조절
 btn_text = pyautogui.locateOnScreen("btn_text.png", confidence=0.8)
 if btn_text:
     pyautogui.click(btn_text, duration=0.5)
@@ -34,6 +38,8 @@ else:
 # 흰 영역 클릭
 #pyautogui.click(200, 200, duration=0.5)
 
+
+# 글자 크기 드롭다운 버튼을 찾기가 어려우므로 주변에 변화 없는 부분을 캡쳐한 후 그것을 기준으로 상태 좌표값으로 처리하는 것이 좋다.
 btn_brush = pyautogui.locateOnScreen("btn_brush.png")
 pyautogui.click(btn_brush.left - 200, btn_brush.top + 200)
 

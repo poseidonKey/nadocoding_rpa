@@ -1,3 +1,6 @@
+# https://pyautogui.readthedocs.io/en/latest/
+# 공식 홈페이지 참조.
+
 import pyautogui
 # print("곧 시작합니다...")
 # pyautogui.countdown(3)

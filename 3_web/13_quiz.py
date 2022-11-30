@@ -15,6 +15,7 @@
 
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 browser = webdriver.Chrome()
 browser.maximize_window()
@@ -23,20 +24,29 @@ browser.maximize_window()
 browser.get('https://www.w3schools.com')
 
 # 2. 화면 중간 LEARN HTML 클릭
-browser.find_element_by_xpath('//*[@id="main"]/div[1]/div[1]/a[1]').click()
+browser.find_element(
+    by=By.XPATH, value='//*[@id="main"]/div[2]/div/div[1]/a[1]').click()
+# browser.find_element_by_xpath('//*[@id="main"]/div[1]/div[1]/a[1]').click()
 
 # 3. 상단 메뉴 중 HOW TO 클릭
-browser.find_element_by_xpath('//*[@id="topnav"]/div/div[1]/a[10]').click()
+browser.find_element(
+    by=By.XPATH, value='//*[@id="topnav"]/div/div[1]/a[11]').click()
+# browser.find_element_by_xpath('//*[@id="topnav"]/div/div[1]/a[10]').click()
 
 # 4. 좌측 메뉴 중 Contact Form 메뉴 클릭
-#browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[116]').click()
+# browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[116]').click()
 
 # 링크 텍스트로 비교 > Contact Form 이라는 2개 이상의 링크 텍스트가 있는 경우 실패
-#browser.find_element_by_link_text('Contact Form').click() 
+#browser.find_element_by_link_text('Contact Form').click()
 
 # 가장 좋은 방법 (텍스트 전체 일치 여부 비교)
+# browser.find_element(by=By.XPATH,value='//*[@id="leftmenuinnerinner"]/a[text()="Contact Form"]').click()
+time.sleep(2)
+browser.find_element(
+    by=By.XPATH, value='//*[@id="leftmenuinnerinner"]/a[118]').click()
+time.sleep(1)
 # xpath로 한번 찾고, 그 문자열 일치 여부로 2중 검사
-browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[text()="Contact Form"]').click() 
+# browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[text()="Contact Form"]').click()
 
 # 일부 텍스트 비교하는 방법
 #browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[contains(text(), "Contact")]').click()
@@ -52,16 +62,24 @@ first_name = "나도"
 last_name = "코딩"
 country = "Canada"
 subject = "퀴즈 완료하였습니다."
-
-browser.find_element_by_xpath('//*[@id="fname"]').send_keys(first_name)
-browser.find_element_by_xpath('//*[@id="lname"]').send_keys(last_name)
-browser.find_element_by_xpath('//*[@id="country"]/option[text()="{}"]'.format(country)).click()
-browser.find_element_by_xpath('//*[@id="main"]/div[3]/textarea').send_keys(subject)
+browser.find_element(by=By.XPATH,value='//*[@id="fname"]').send_keys(first_name)
+# browser.find_element_by_xpath('//*[@id="fname"]').send_keys(first_name)
+time.sleep(2)
+browser.find_element(by=By.XPATH,value='//*[@id="lname"]').send_keys(last_name)
+# browser.find_element_by_xpath('//*[@id="lname"]').send_keys(last_name)
+time.sleep(2)
+browser.find_element(by=By.XPATH,value='//*[@id="country"]/option[text()="{}"]'.format(country)).click()
+# browser.find_element_by_xpath(
+    # '//*[@id="country"]/option[text()="{}"]'.format(country)).click()
+time.sleep(2)
+browser.find_element(by=By.XPATH,value='//*[@id="main"]/div[3]/textarea').send_keys(subject)
+# browser.find_element_by_xpath(
+#     '//*[@id="main"]/div[3]/textarea').send_keys(subject)
 
 # 6. 5초 대기 후 Submit 버튼 클릭
 time.sleep(5)
-browser.find_element_by_xpath('//*[@id="main"]/div[3]/a').click()
-
+# browser.find_element_by_xpath('//*[@id="main"]/div[3]/a').click()
+browser.find_element(by=By.XPATH, value='//*[@id="main"]/div[3]/a').click()
 # 7. 5초 대기 후 브라우저 종료
 time.sleep(5)
 browser.quit()

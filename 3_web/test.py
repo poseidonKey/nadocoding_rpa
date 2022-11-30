@@ -1,15 +1,15 @@
 import time
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-
-browser = webdriver.Chrome("chromedriver.exe")
-browser.get('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_option')
-
-# cars 에 해당하는 element 를 찾고, 드롭다운 내부에 있는 4번째 옵션을 선택
-# elem = browser.find_element_by_xpath('//*[@id="cars"]/option[4]')
-elem = browser.find_element(by=By.ID,value='cars')
-# option[1] : 첫번째 항목 
-# option[2] : 두번째 항목 
-# ...
-elem.click()
+browser = webdriver.Chrome()
+browser.maximize_window()
+browser.get('https://flight.naver.com/flights/')
+time.sleep(5)
+# 가는 날 클릭
+browser.find_element(by=By.XPATH,value='//*[@id="__next"]/div/div[1]/div[4]/div/div/div[2]/div[2]/button[1]').click()
+# browser.find_element(by=By.LINK_TEXT,value='가는 날').click()
+# browser.find_element_by_link_text('가는날 선택').click()

@@ -1,3 +1,5 @@
+# 한글이 문제가 됨
+# 2번에서 해결
 import smtplib
 from account import *
 

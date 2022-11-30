@@ -1,7 +1,9 @@
+# pip install imap-tools 로 설치
 from imap_tools import MailBox
 from account import *
 
 mailbox = MailBox("imap.gmail.com", 993)
+# 받은 편지함으로 접근
 mailbox.login(EMAIL_ADDRESS, EMAIL_PASSWORD, initial_folder="INBOX")
 
 # limit : 최대 메일 갯수

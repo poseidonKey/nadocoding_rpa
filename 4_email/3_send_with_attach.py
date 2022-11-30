@@ -8,7 +8,7 @@ msg["From"] = EMAIL_ADDRESS # 보내는 사람
 msg["To"] = "nadocoding@gmail.com" # 받는 사람
 msg.set_content("다운로드 하세요")
 
-#MIME Type
+#MIME Type .. 구글 검색해서 타입을 확인해 본다.
 #msg.add_attachment()
 with open("btn_brush.png", "rb") as f:
     msg.add_attachment(f.read(), maintype="image", subtype="png", filename=f.name)

@@ -6,6 +6,8 @@ browser.maximize_window()
 
 browser.get('https://www.w3schools.com/tags/att_input_type_radio.asp')
 curr_handle = browser.current_window_handle
+
+# 매번 달라짐
 print(curr_handle) # 현재 윈도우 핸들 정보
 
 # Try it yourself
@@ -22,7 +24,7 @@ for handle in handles:
 
 # 그 브라우저를 종료
 print("현재 핸들 닫기")
-browser.close() 
+browser.close() # quit는 모든 브라우저 닫기
 
 # 이전 핸들로 돌아오기
 print("처음 핸들로 돌아오기")

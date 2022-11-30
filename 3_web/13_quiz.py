@@ -35,6 +35,7 @@ browser.find_element_by_xpath('//*[@id="topnav"]/div/div[1]/a[10]').click()
 #browser.find_element_by_link_text('Contact Form').click() 
 
 # 가장 좋은 방법 (텍스트 전체 일치 여부 비교)
+# xpath로 한번 찾고, 그 문자열 일치 여부로 2중 검사
 browser.find_element_by_xpath('//*[@id="leftmenuinnerinner"]/a[text()="Contact Form"]').click() 
 
 # 일부 텍스트 비교하는 방법

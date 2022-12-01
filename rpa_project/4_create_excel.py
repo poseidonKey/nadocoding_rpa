@@ -11,7 +11,7 @@ print("[1. 지원자 메일 조회]")
 with MailBox("imap.gmail.com", 993).login(EMAIL_ADDRESS, EMAIL_PASSWORD, initial_folder="INBOX") as mailbox:
     index = 1 # 순번
     for msg in mailbox.fetch('(SENTSINCE 07-Nov-2020)'): # 2020년 11월 7일 이후로 온 메일 조회
-        if "파이썬 특강 신청합니다." in msg.subject:
+        if "파이썬 특강 신청합니다." in msg.subject: # 이전 신청한 것 때문에 내용 약간 수정
             nickname, phone = msg.text.strip().split("/")
             # print("순번 : {} 닉네임 : {} 전화번호 : {}".format(index, nickname, phone))
             applicant_list.append((msg, index, nickname, phone))

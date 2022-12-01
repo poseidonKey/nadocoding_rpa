@@ -28,7 +28,7 @@ with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
         # index = applicant[1]
         # nickname = applicant[2]
         # phone = applicant[3]
-        index, nickname, phone = applicant[1:]
+        index, nickname, phone = applicant[1:] # 한번에 처리
 
         title = None
         content = None

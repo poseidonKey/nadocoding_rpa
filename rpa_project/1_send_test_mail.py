@@ -11,8 +11,8 @@ from email.message import EmailMessage
 nicknames = ["유재석", "박명수", "정형돈", "노홍철", "조세호"]
 
 with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
-    smtp.ehlo()
-    smtp.starttls()
+    smtp.ehlo() #연결여부
+    smtp.starttls() # 문제여부 
     smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
     for nickname in nicknames:
